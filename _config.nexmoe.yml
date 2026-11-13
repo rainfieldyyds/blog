@@ -41,8 +41,8 @@ widgets:
       enable: true
       options: 
         search: 
-            type: engine # 可选engine（用搜索引擎搜索）、swiftype、或local（本地搜索）
-            url: https://cn.bing.com/search?q= # 上线后改成 site:你的域名，例如 https://cn.bing.com/search?q=site:example.com
+            type: local # 可选engine（用搜索引擎搜索）、swiftype、或local（本地搜索）
+            # local 类型直接读站点自动生成的 content.json，无需配置 url
             id: <swiftype-id> # swiftype的id，见启用教程。在type为engine时无效
     - name: social
       enable: true
@@ -65,7 +65,7 @@ widgets:
       options: 
         maxTagcloud: 17  # 标签云组件显示的标签数量，0 表示不限制
     - name: hitokoto # 一言 widget
-      enable: false
+      enable: true
       options: 
         widgetHitokoto: # 一言组件
             loading_placeholder: '🚀 获取中...' # 正在一言时的占位符
