@@ -5,7 +5,7 @@ cover: /images/封面1.png
 coverWidth: 1280
 coverHeight: 720
 tags: 
-    - unity游戏制作
+    - 游戏制作
 categories:
     - 记录
 ---
