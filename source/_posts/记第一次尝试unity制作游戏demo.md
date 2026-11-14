@@ -23,6 +23,7 @@ categories:
 ![boss战截图](/images/图3.png)
 ### 游戏演示视频
 <iframe src="//player.bilibili.com/player.html?bvid=BV1BrsG6FE4j" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500"></iframe>
+
 ### 对自己的话
 这是我第一次接触这个领域，也是我上大学前的目标第一次实现。希望我能够坚持下去，就算是试错也想要在这块领域中发现适合自己的地方
 
