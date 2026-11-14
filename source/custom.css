@@ -1,14 +1,80 @@
-/* 让博客背景图更清晰 */
+/* 背景图显示*/
 #nexmoe-background .nexmoe-bg {
-  opacity: 0.7;
-  filter: blur(8px);
+  opacity: 0.8;
+  filter: brightness(0.6);
 }
 
-/* 毛玻璃卡片效果 */
+/* 毛玻璃卡片效果（浅色模式） */
 .nexmoe #nexmoe-content .nexmoe-primary,
 .nexmoe-widget-wrap {
-  background-color: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(16px) saturate(160%);
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
   border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+/* 毛玻璃卡片效果（深色模式） */
+@media (prefers-color-scheme: dark) {
+  .nexmoe #nexmoe-content .nexmoe-primary,
+  .nexmoe-widget-wrap {
+    background-color: rgba(35, 35, 35, 0.1);
+    backdrop-filter: blur(1px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+}
+
+/* 主题主色与文字颜色 */
+:root {
+  --color-primary: #3b82f6;
+  --color-primary-bg: rgba(59, 130, 246, 0.15);
+  --color-text-1: #000;
+  --color-text-2: #1a1a1a;
+  --color-text-3: #222;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text-1: #fff;
+    --color-text-2: #ccc;
+  }
+}
+
+/* 侧边栏文字（深色模式固定为 #999，不随次要文字变量变化） */
+@media (prefers-color-scheme: dark) {
+  .nexmoe-widget-wrap .nexmoe-widget ul li a {
+    color: #999;
+  }
+}
+
+/* 隐藏空白的评论区容器 */
+.nexmoe-post-footer {
+  display: none;
+}
+
+/* 一言文字直接显示，不滚动 */
+.nexmoe-widget-wrap .nexmoe-widget .hitokoto-text {
+  animation: none;
+  white-space: normal;
+  display: block;
+}
+
+/* GitHub 图标替换为官方 logo */
+.nexmoe-social a i.icon-github {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  background-color: currentColor;
+  -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiI+PHBhdGggZD0iTTggMEMzLjU4IDAgMCAzLjU4IDAgOGMwIDMuNTQgMi4yOSA2LjUzIDUuNDcgNy41OS40LjA3LjU1LS4xNy41NS0uMzggMC0uMTktLjAxLS44Mi0uMDEtMS40OS0yLjAxLjM3LTIuNTMtLjQ5LTIuNjktLjk0LS4wOS0uMjMtLjQ4LS45NC0uODItMS4xMy0uMjgtLjE1LS42OC0uNTItLjAxLS41My42My0uMDEgMS4wOC41OCAxLjIzLjgyLjcyIDEuMjEgMS44Ny44NyAyLjMzLjY2LjA3LS41Mi4yOC0uODcuNTEtMS4wNy0xLjc4LS4yLTMuNjQtLjg5LTMuNjQtMy45NSAwLS44Ny4zMS0xLjU5LjgyLTIuMTUtLjA4LS4yLS4zNi0xLjAyLjA4LTIuMTIgMCAwIC42Ny0uMjEgMi4yLjgyLjY0LS4xOCAxLjMyLS4yNyAyLS4yNy42OCAwIDEuMzYuMDkgMiAuMjcgMS41My0xLjA0IDIuMi0uODIgMi4yLS44Mi40NCAxLjEuMTYgMS45Mi4wOCAyLjEyLjUxLjU2LjgyIDEuMjcuODIgMi4xNSAwIDMuMDctMS44NyAzLjc1LTMuNjUgMy45NS4yOS4yNS41NC43My41NCAxLjQ4IDAgMS4wNy0uMDEgMS45My0uMDEgMi4yIDAgLjIxLjE1LjQ2LjU1LjM4QTguMDEzIDguMDEzIDAgMDAxNiA4YzAtNC40Mi0zLjU4LTgtOC04eiIvPjwvc3ZnPg==");
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiI+PHBhdGggZD0iTTggMEMzLjU4IDAgMCAzLjU4IDAgOGMwIDMuNTQgMi4yOSA2LjUzIDUuNDcgNy41OS40LjA3LjU1LS4xNy41NS0uMzggMC0uMTktLjAxLS44Mi0uMDEtMS40OS0yLjAxLjM3LTIuNTMtLjQ5LTIuNjktLjk0LS4wOS0uMjMtLjQ4LS45NC0uODItMS4xMy0uMjgtLjE1LS42OC0uNTItLjAxLS41My42My0uMDEgMS4wOC41OCAxLjIzLjgyLjcyIDEuMjEgMS44Ny44NyAyLjMzLjY2LjA3LS41Mi4yOC0uODcuNTEtMS4wNy0xLjc4LS4yLTMuNjQtLjg5LTMuNjQtMy45NSAwLS44Ny4zMS0xLjU5LjgyLTIuMTUtLjA4LS4yLS4zNi0xLjAyLjA4LTIuMTIgMCAwIC42Ny0uMjEgMi4yLjgyLjY0LS4xOCAxLjMyLS4yNyAyLS4yNy42OCAwIDEuMzYuMDkgMiAuMjcgMS41My0xLjA0IDIuMi0uODIgMi4yLS44Mi40NCAxLjEuMTYgMS45Mi4wOCAyLjEyLjUxLjU2LjgyIDEuMjcuODIgMi4xNSAwIDMuMDctMS44NyAzLjc1LTMuNjUgMy45NS4yOS4yNS41NC43My41NCAxLjQ4IDAgMS4wNy0uMDEgMS45My0uMDEgMi4yIDAgLjIxLjE1LjQ2LjU1LjM4QTguMDEzIDguMDEzIDAgMDAxNiA4YzAtNC40Mi0zLjU4LTgtOC04eiIvPjwvc3ZnPg==");
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+}
+.nexmoe-social a i.icon-github:before {
+  content: none;
 }

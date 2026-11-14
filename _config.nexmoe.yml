@@ -51,13 +51,13 @@ widgets:
             GitHub:
                 - https://github.com/rainfieldyyds
                 - icon-github
-                - rgb(25, 23, 23)
-                - rgba(25, 23, 23, .1)
+                - rgb(255, 255, 255)
+                - rgba(255, 255, 255, .14)
             哔哩哔哩:
                 - https://space.bilibili.com/1936010655
                 - icon-bilibili
-                - rgb(231, 106, 141)
-                - rgba(231, 106, 141, .1)
+                - rgb(251, 114, 153)
+                - rgba(251, 114, 153, .18)
     - name: category
       enable: true
     - name: tagcloud
@@ -70,7 +70,7 @@ widgets:
         widgetHitokoto: # 一言组件
             loading_placeholder: '🚀 获取中...' # 正在一言时的占位符
             loading_error_placeholder: '🐞 获取失败...' # 加载一言失败时的占位符
-            category: a# 一言句子类型（可选），不配置的话随机获取，详见 https://developer.hitokoto.cn/sentence/#%E5%8F%A5%E5%AD%90%E7%B1%BB%E5%9E%8B-%E5%8F%82%E6%95%B0
+            category: "a&c=b&c=c" # 动画+漫画+游戏；只想动画+游戏就把 c=b 去掉
     - name: archive #settings: widgetAchive
       enable: true
       options:
